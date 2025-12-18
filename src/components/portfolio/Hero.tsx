@@ -84,7 +84,7 @@ const Hero = () => {
             {/* Social Links */}
             <div className="flex items-center gap-4 mt-10 animate-fade-up delay-500">
               <a
-                href="mailto:mark.murangiri@email.com"
+                href="mailto:markmurangiri885@gmail.com"
                 className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300"
                 aria-label="Email"
               >

@@ -22,14 +22,14 @@ const Contact = () => {
           <div className="grid md:grid-cols-3 gap-6 mb-12">
             {/* Email */}
             <a
-              href="mailto:mark.murangiri@email.com"
+              href="mailto:markmurangiri885@gmail.com"
               className="group p-6 rounded-2xl bg-background card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1 text-center"
             >
               <div className="w-14 h-14 rounded-2xl bg-primary/10 flex items-center justify-center mx-auto mb-4 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                 <Mail size={24} className="text-primary group-hover:text-primary-foreground" />
               </div>
               <h3 className="font-display font-bold mb-1">Email</h3>
-              <p className="text-muted-foreground text-sm">mark.murangiri@email.com</p>
+              <p className="text-muted-foreground text-sm">markmurangiri885@gmail.com</p>
             </a>
 
             {/* Location */}
@@ -63,7 +63,7 @@ const Contact = () => {
           <div className="text-center">
             <div className="inline-flex flex-wrap justify-center gap-4">
               <Button variant="hero" size="xl" asChild>
-                <a href="mailto:mark.murangiri@email.com">
+                <a href="mailto:markmurangiri885@gmail.com">
                   <Mail size={20} />
                   Send Email
                 </a>
