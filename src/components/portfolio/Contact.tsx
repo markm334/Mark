@@ -70,7 +70,7 @@ const Contact = () => {
               </Button>
               <Button variant="heroOutline" size="xl" asChild>
                 <a
-                  href="https://www.linkedin.com/in/mark-murangiri"
+                  href="https://www.linkedin.com/in/mark-murangiri-5391b4228/"
                   target="_blank"
                   rel="noopener noreferrer"
                 >

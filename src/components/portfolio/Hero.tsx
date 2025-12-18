@@ -4,9 +4,9 @@ import markPortrait from "@/assets/mark..png";
 
 const Hero = () => {
   return (
-    <section className="min-h-screen hero-bg flex items-center pt-20">
-      <div className="container mx-auto px-6">
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+    <section className="min-h-[70vh] lg:min-h-screen hero-bg flex items-center pt-12 lg:pt-20">
+      <div className="container mx-auto px-3 sm:px-6">
+        <div className="grid grid-cols-2 gap-6 md:gap-12 items-center">
           {/* Left: Profile Image */}
           <div className="relative flex justify-center lg:justify-start order-2 lg:order-1">
             <div className="relative">
@@ -14,7 +14,7 @@ const Hero = () => {
               <div className="absolute inset-0 -m-4 rounded-full border-2 border-dotted border-primary/30 animate-pulse-border" />
               
               {/* Main image */}
-              <div className="relative w-72 h-72 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl glow-primary">
+              <div className="relative w-20 h-20 sm:w-36 sm:h-36 md:w-80 md:h-80 lg:w-96 lg:h-96 rounded-full overflow-hidden shadow-2xl glow-primary">
                 <img
                   src={markPortrait}
                   alt="Mark Murangiri - Founder & Product Innovator"
@@ -22,15 +22,15 @@ const Hero = () => {
                 />
               </div>
               
-              {/* Floating badges */}
-              <div className="absolute -bottom-4 -left-4 bg-card rounded-xl p-4 shadow-lg animate-float">
+              {/* Floating badges (hidden on very small screens to avoid overflow) */}
+              <div className="hidden sm:block absolute -bottom-4 -left-4 bg-card rounded-xl p-3 shadow-lg animate-float">
                 <div className="flex items-center gap-2 text-sm">
                   <MapPin size={16} className="text-accent" />
                   <span className="font-medium">Nairobi, Kenya</span>
                 </div>
               </div>
               
-              <div className="absolute -top-4 -right-4 bg-primary text-primary-foreground rounded-xl p-4 shadow-lg animate-float delay-300">
+              <div className="hidden sm:block absolute -top-4 -right-4 bg-primary text-primary-foreground rounded-xl p-3 shadow-lg animate-float delay-300">
                 <span className="font-display font-bold text-lg">5+</span>
                 <p className="text-xs opacity-90">Startup Developed</p>
               </div>
@@ -43,7 +43,7 @@ const Hero = () => {
               Hello There!
             </p>
             
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-black leading-tight mb-6 animate-fade-up delay-100">
+            <h1 className="font-display text-2xl sm:text-3xl md:text-5xl lg:text-6xl font-black leading-tight mb-4 sm:mb-6 animate-fade-up delay-100 break-words">
               I'M <span className="text-accent">MARK MURANGIRI</span>, A{" "}
               <span className="text-primary">FOUNDER</span> BUILDING{" "}
               <span className="relative">
@@ -54,27 +54,31 @@ const Hero = () => {
               ACROSS SECTORS.
             </h1>
 
-            <p className="text-lg text-muted-foreground mb-8 max-w-xl animate-fade-up delay-200">
+            <p className="text-sm sm:text-base text-muted-foreground mb-6 sm:mb-8 max-w-xl animate-fade-up delay-200">
               Impact Systems Builder & Inclusive Innovation Leader — Transforming complex challenges in healthcare, environment, STEM, and community development into scalable solutions.
             </p>
 
-            <div className="flex items-center gap-4 mb-8 animate-fade-up delay-300">
+            <div className="flex items-center gap-3 mb-6 sm:mb-8 animate-fade-up delay-300">
               <span className="flex items-center gap-2">
                 <span className="w-3 h-3 rounded-full bg-green-500 animate-pulse" />
                 <span className="text-muted-foreground">Open for Partnerships</span>
               </span>
             </div>
 
-            <div className="flex flex-wrap gap-4 animate-fade-up delay-400">
-              <Button variant="hero" size="xl" asChild>
-                <a href="#contact">
-                  Get in Touch
-                  <ArrowRight size={20} />
-                </a>
-              </Button>
-              <Button variant="heroOutline" size="xl" asChild>
-                <a href="#work">View My Work</a>
-              </Button>
+            <div className="flex flex-wrap gap-3 animate-fade-up delay-400">
+              <div className="w-full sm:w-auto">
+                <Button variant="hero" size="xl" asChild className="w-full sm:w-auto">
+                  <a href="#contact">
+                    Get in Touch
+                    <ArrowRight size={20} />
+                  </a>
+                </Button>
+              </div>
+              <div className="w-full sm:w-auto">
+                <Button variant="heroOutline" size="xl" asChild className="w-full sm:w-auto">
+                  <a href="#work">View My Work</a>
+                </Button>
+              </div>
             </div>
 
             {/* Social Links */}
@@ -87,7 +91,7 @@ const Hero = () => {
                 <Mail size={20} />
               </a>
               <a
-                href="https://www.linkedin.com/in/mark-murangiri"
+                href="https://www.linkedin.com/in/mark-murangiri-5391b4228/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="p-3 rounded-full bg-muted hover:bg-primary hover:text-primary-foreground transition-all duration-300"

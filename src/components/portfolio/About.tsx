@@ -42,7 +42,7 @@ const crossCuttingThemes = [
 
 const About = () => {
   return (
-    <section id="about" className="py-24 bg-card">
+    <section id="about" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-6">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left: Content */}
@@ -73,14 +73,13 @@ const About = () => {
             {impactDomains.map((area, index) => (
               <div
                 key={area.title}
-                className={`group p-5 rounded-2xl bg-background card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up`}
-                style={{ animationDelay: `${index * 80}ms` }}
+                className={`group p-5 rounded-2xl bg-background card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-1 animate-fade-up ${"delay-" + Math.min((index + 1) * 100, 800)}`}
               >
                 <div className="w-10 h-10 rounded-xl bg-primary/10 flex items-center justify-center mb-3 group-hover:bg-primary group-hover:text-primary-foreground transition-colors">
                   <area.icon size={20} className="text-primary group-hover:text-primary-foreground" />
                 </div>
                 <h3 className="font-display font-bold text-base mb-1">{area.title}</h3>
-                <p className="text-muted-foreground text-sm">{area.description}</p>
+                <p className="text-muted-foreground text-sm break-words">{area.description}</p>
               </div>
             ))}
           </div>

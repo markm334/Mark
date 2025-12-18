@@ -60,8 +60,7 @@ const Capabilities = () => {
           {capabilityGroups.map((group, index) => (
             <div
               key={group.title}
-              className={`group p-8 rounded-3xl bg-card card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-2 animate-fade-up`}
-              style={{ animationDelay: `${index * 150}ms` }}
+              className={`group p-8 rounded-3xl bg-card card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-2 animate-fade-up ${"delay-" + Math.min((index + 1) * 100, 800)}`}
             >
               <div
                 className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${

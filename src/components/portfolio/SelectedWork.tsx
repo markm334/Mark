@@ -65,9 +65,9 @@ const workCategories = [
 
 const SelectedWork = () => {
   return (
-    <section id="work" className="py-24 bg-card">
+    <section id="work" className="py-16 md:py-24 bg-card">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
+        <div className="text-center mb-8 md:mb-16">
           <p className="text-accent font-semibold mb-4 uppercase tracking-wider text-sm">
             My Work
           </p>
@@ -80,12 +80,11 @@ const SelectedWork = () => {
           </p>
         </div>
 
-        <div className="space-y-6">
+        <div className="space-y-4">
           {workCategories.map((work, index) => (
             <div
               key={work.title}
-              className={`group grid md:grid-cols-[1fr,2fr] gap-6 p-6 md:p-8 rounded-3xl bg-background card-shadow hover:card-shadow-hover transition-all duration-300 animate-fade-up`}
-              style={{ animationDelay: `${index * 100}ms` }}
+              className={`group grid grid-cols-2 md:grid-cols-[1fr,2fr] gap-4 md:gap-6 p-4 md:p-8 rounded-3xl bg-background card-shadow hover:card-shadow-hover transition-all duration-300 animate-fade-up ${"delay-" + Math.min((index + 1) * 100, 800)}`}
             >
               {/* Icon & Title */}
               <div className="flex flex-col">
@@ -108,7 +107,7 @@ const SelectedWork = () => {
 
               {/* Content */}
               <div>
-                <p className="text-muted-foreground text-base mb-4 leading-relaxed">
+                <p className="text-muted-foreground text-base mb-4 leading-relaxed break-words">
                   {work.summary}
                 </p>
                 <div>

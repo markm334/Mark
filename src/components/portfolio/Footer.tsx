@@ -26,7 +26,7 @@ const Footer = () => {
               </svg>
             </a>
             <a
-              href="https://www.linkedin.com/in/mark-murangiri"
+              href="https://www.linkedin.com/in/mark-murangiri-5391b4228/"
               target="_blank"
               rel="noopener noreferrer"
               className="hover:text-accent transition-colors"

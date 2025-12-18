@@ -23,6 +23,16 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Prevent background scroll when mobile menu is open
+  useEffect(() => {
+    if (isMobileMenuOpen) {
+      document.body.classList.add("overflow-hidden");
+    } else {
+      document.body.classList.remove("overflow-hidden");
+    }
+    return () => document.body.classList.remove("overflow-hidden");
+  }, [isMobileMenuOpen]);
+
   return (
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -58,29 +68,32 @@ const Navbar = () => {
         {/* Mobile Menu Button */}
         <button
           className="md:hidden text-foreground"
+          aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
         >
           {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
-      {/* Mobile Menu */}
+      {/* Mobile Menu (full-screen overlay) */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 right-0 bg-background/95 backdrop-blur-md border-t border-border animate-fade-up">
-          <div className="container mx-auto px-6 py-6 flex flex-col gap-4">
+        <div className="md:hidden fixed inset-0 z-40 bg-background/95 backdrop-blur-md animate-fade-in">
+          <div className="h-full container mx-auto px-6 py-8 flex flex-col items-center justify-center gap-6">
             {navLinks.map((link) => (
               <a
                 key={link.href}
                 href={link.href}
-                className="text-foreground hover:text-accent transition-colors font-medium py-2"
+                className="text-foreground hover:text-accent transition-colors font-medium text-2xl py-2"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 {link.label}
               </a>
             ))}
-            <Button variant="hero" size="lg" asChild className="mt-4">
-              <a href="#contact">Let's Talk</a>
-            </Button>
+            <div className="mt-4 w-full flex justify-center">
+              <Button variant="hero" size="lg" asChild className="w-full max-w-xs">
+                <a href="#contact">Let's Talk</a>
+              </Button>
+            </div>
           </div>
         </div>
       )}
