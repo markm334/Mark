@@ -41,38 +41,38 @@ const capabilityGroups = [
 
 const Capabilities = () => {
   return (
-    <section id="capabilities" className="py-24 bg-background">
-      <div className="container mx-auto px-6">
-        <div className="text-center mb-16">
-          <p className="text-accent font-semibold mb-4 uppercase tracking-wider text-sm">
+    <section id="capabilities" className="py-16 md:py-24 bg-background">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="text-center mb-10 sm:mb-16">
+          <p className="text-accent font-semibold mb-2 sm:mb-4 uppercase tracking-wider text-xs sm:text-sm">
             What I Bring
           </p>
-          <h2 className="font-display text-3xl md:text-4xl lg:text-5xl font-bold mb-6">
+          <h2 className="font-display text-xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-4 sm:mb-6">
             Core <span className="text-accent">Expertise</span>
           </h2>
-          <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
+          <p className="text-muted-foreground text-sm sm:text-lg max-w-2xl mx-auto">
             A unique blend of technical innovation, social impact experience, and strategic 
             leadership to transform ideas into scalable, real-world solutions.
           </p>
         </div>
 
-        <div className="grid md:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 sm:gap-8">
           {capabilityGroups.map((group, index) => (
             <div
               key={group.title}
-              className={`group p-8 rounded-3xl bg-card card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-2 animate-fade-up ${"delay-" + Math.min((index + 1) * 100, 800)}`}
+              className={`group p-6 sm:p-8 rounded-3xl bg-card card-shadow hover:card-shadow-hover transition-all duration-300 hover:-translate-y-2 animate-fade-up ${"delay-" + Math.min((index + 1) * 100, 800)}`}
             >
               <div
-                className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-6 ${
+                className={`w-14 sm:w-16 h-14 sm:h-16 rounded-2xl flex items-center justify-center mb-4 sm:mb-6 ${
                   group.color === "accent"
                     ? "bg-accent/10 text-accent"
                     : "bg-primary/10 text-primary"
                 }`}
               >
-                <group.icon size={32} />
+                <group.icon size={28} />
               </div>
-              <h3 className="font-display font-bold text-xl mb-6">{group.title}</h3>
-              <ul className="space-y-3">
+              <h3 className="font-display font-bold text-lg sm:text-xl mb-4 sm:mb-6">{group.title}</h3>
+              <ul className="space-y-2 sm:space-y-3">
                 {group.items.map((item) => (
                   <li key={item} className="flex items-start gap-3">
                     <span
@@ -80,7 +80,7 @@ const Capabilities = () => {
                         group.color === "accent" ? "bg-accent" : "bg-primary"
                       }`}
                     />
-                    <span className="text-muted-foreground">{item}</span>
+                    <span className="text-muted-foreground text-sm sm:text-base">{item}</span>
                   </li>
                 ))}
               </ul>
